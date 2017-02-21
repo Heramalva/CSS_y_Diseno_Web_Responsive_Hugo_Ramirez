@@ -3,17 +3,18 @@ body{
   font-family: Dancing Script;
 }
 .contenedor{
-  width:900px;
+  min-width:240px;
   margin:0 auto;
 }
 .titulo{
-  width:73%;
+  width:70%;
   text-align: left;
-  padding: 10px;
+  padding-left: 10px;
   text-shadow: 2px 2px black;
 }
 .enlaces{
-  padding: 40px;
+  padding-top: 30px;
+  padding-left: 70px;
   text-align: right;
 }
 header{
@@ -25,10 +26,13 @@ header{
   -webkit-flex-flow: row wrap;
   border-radius: 10px 10px 0px 0px;
   -webkit-border-radius: 10px 10px 0px 0px;
+  animation: animheader 1s;
+  -webkit-animation: animheader 1s;
 }
 a{
   color:white;
   text-decoration:none;
+  padding: 5px;
 }
 .central{
   background-color: #82c3a6;
@@ -73,5 +77,97 @@ footer{
   color:black;
 }
 img{
- filter: drop-shadow(2px 2px black);
+ filter: drop-shadow(2px 2px #02010a);
+}
+@keyframes animheader{
+  0%{
+    margin-top: 150%;
+  }
+  60%{
+    margin-top: -5%;
+  }
+  100%{
+    margin-top: 0%;
+  }
+}
+@-webkit-keyframes animheader{
+  0%{
+    margin-top: 150%;
+  }
+  60%{
+    margin-top: -5%;
+  }
+  100%{
+    margin-top: 0%;
+  }
+}
+.sec1 :hover{
+  transform: rotate(10deg);
+  transition-duration: 1s;
+  filter:drop-shadow(2px 2px #82c3a6);
+}
+.sec2 :hover{
+  transform: translate(20px, -5px);
+  transition-duration: 1s;
+  filter:drop-shadow(2px 2px #82c3a6);
+}
+.paisajes{
+  display: flex;
+  -webkit-display:flex;
+  flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+  background-color:#d5c75f;
+}
+.retratos{
+  display: flex;
+  -webkit-display:flex;
+  flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+  background-color:#d5c75f;
+}
+.p1, .p2, .p3{
+  width:30%;
+  padding: 10px;
+}
+.paisajes img{
+  width:100%;
+  padding:20px;
+}
+.retratos img{
+  width:100%;
+  padding:20px;
+}
+#f1{
+  filter:blur(10px);
+}
+#f2,#f4,#f6{
+  filter: grayscale(100%);
+}
+#f3{
+  filter:sepia(90%);
+}
+@media (max-width:900px){
+  .titulo, .enlaces{
+    padding:0;
+    padding-bottom: 5px;
+    text-align: center;
+    width:100%;
+  }
+  .sec1, .sec2{
+    width:100%;
+  }
+    .p1, .p2, .p3{
+    width:90%;
+  }
+  footer{
+    flex-flow: column wrap;
+  }
+  .pie1, .pie2, .pie3, .pie4{
+    width: 100%;
+  }
+}
+@media (min-width:900px){
+  .contenedor{
+    width:900px;
+  }
 }
